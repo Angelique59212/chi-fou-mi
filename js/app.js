@@ -1,6 +1,10 @@
 let rock = document.getElementById("rock");
 let sheet = document.getElementById("sheet");
 let chisel = document.getElementById("chisel");
+let scorePlayer = document.getElementById("score-player");
+let scoreBoot = document.getElementById("score-boot");
+let youWin = document.getElementById("you-win");
+let bootWin = document.getElementById("boot-win");
 
 //button choice player
 let game = document.getElementById("player");
@@ -34,6 +38,29 @@ sheet.addEventListener("click" , choiceBoot);
 chisel.addEventListener("click", choiceBoot);
 
 //winner
-    function winner () {
-
+    function winner (event, boot) {
+        if (event === 0 || boot === 2) {
+            youWin.innerHTML = "Tu as gagné!";
+            scorePlayer++;
+        }
+        else {
+            bootWin.innerHTML = "L'ordinateur remporte!";
+            scoreBoot++;
+        }
+        if (event === 2 || boot === 1) {
+            youWin.innerHTML = "Tu as gagné!";
+            scorePlayer++;
+        }
+        else {
+            bootWin.innerHTML = "L'ordinateur remporte!";
+            scoreBoot++;
+        }
+        if (event === 1 || boot === 0) {
+            youWin.innerHTML = "Tu as gagné";
+            scorePlayer++;
+        }
+        else {
+            bootWin.innerHTML = "L'ordinateur remporte";
+            scoreBoot++;
+        }
     }
