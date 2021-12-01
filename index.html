@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chi-Fou-Mi</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <div id="container">
+        <h1>Chi Fou Mi</h1>
+        <p>Choisir entre les 3 signes.</p>
+        <p>
+            <span>Rappel</span> : la pierre bat les ciseaux en les cassant, les ciseaux battent la feuille en la
+            coupant, la feuille bat la pierre en l'enveloppant.
+        </p>
+        <div>
+            <input type="button" id="player" name="player" value="Jouer">
+        </div>
+
+        <div>
+            <div id="play"></div>
+            <div id="boot"></div>
+        </div>
+
+        <div id="container-second">
+            <img id="rock" src="/img/pierre.png" alt="pierre">
+            <img id="sheet" src="/img/feuille.png" alt="feuille">
+            <img id="chisel" src="/img/ciseau.png" alt="ciseau">
+        </div>
+
+        <div id="score-player"></div>
+        <div id="score-boot"></div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>
