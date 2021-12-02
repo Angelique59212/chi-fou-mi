@@ -1,18 +1,18 @@
-//appel image
+// image
 let containerSecond = document.getElementById("container-second").getElementsByTagName("img");
 
-//appel conteneur choix
+//container choice
 let play = document.getElementById("play");
 let boot = document.getElementById("boot");
 
-//appel affichage score
+//display score
 let scorePlayer = document.getElementById("score-player");
 let scoreBoot = document.getElementById("score-boot");
 
-//appel qui gagne
+//who win
 let whoWin = document.getElementById("winner");
 
-//create enfant img
+//create child img
 let image = document.createElement("img");
 let image2 = document.createElement("img");
 
@@ -39,7 +39,7 @@ for (let i = 0; i < containerSecond.length ; i++) {
             winner(i, computer);
         }
 
-        image.src = containerSecond[i].src; //prendre l'image et sa source quand on clique
+        image.src = containerSecond[i].src; //take the image and its source when you click
         play.appendChild(image);
         image2.src = containerSecond[computer].src;
         boot.appendChild(image2);
@@ -53,13 +53,13 @@ function winner (player, boot) {
                 if (boot === 1) {
                     whoWin.innerHTML = "L'ordinateur remporte!";
                     result1++;
-                    score2.innerHTML = "Son score est de" + result1 ;
+                    score2.innerHTML = "Son score est de " + result1 ;
                     scoreBoot.appendChild(score2);
                 }
                 else  {
                     whoWin.innerHTML = "Tu as gagné!";
                     result++;
-                    score.innerHTML = "Ton score est de" + result;
+                    score.innerHTML = "Ton score est de " + result;
                     scorePlayer.appendChild(score);
                 }
                 break;
