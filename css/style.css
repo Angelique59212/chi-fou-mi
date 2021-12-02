@@ -9,7 +9,7 @@ html {
 }
 
 body {
-    background-image: url("/img/back_chifoumi.png");
+    background-image: url("../img/back_chifoumi.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
