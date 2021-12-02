@@ -9,7 +9,7 @@ html {
 }
 
 body {
-    background-image: url("/img/backchifoumi.jpg");
+    background-image: url("/img/back_chifoumi.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -39,9 +39,22 @@ span {
     border: 1px solid black;
     display: inline-block;
     margin: 2rem;
+    text-align: center;
 }
 
 h2 {
     text-align: center;
 }
 
+@media screen and (max-width: 465px) {
+    #reminder {
+        width: 30rem;
+    }
+    #play , #boot {
+        display: flex;
+        justify-content: center;
+    }
+    h2 {
+        font-size: 2.5rem;
+    }
+}
