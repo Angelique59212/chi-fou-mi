@@ -1,73 +1,60 @@
-let rock = document.getElementById("rock");
-let sheet = document.getElementById("sheet");
-let chisel = document.getElementById("chisel");
+//appel image
+let containerSecond = document.getElementById("container-second").getElementsByTagName("img");
+//appel conteneur choix
+let play = document.getElementById("play");
+let boot = document.getElementById("boot");
+//appel affichage score
 let scorePlayer = document.getElementById("score-player");
 let scoreBoot = document.getElementById("score-boot");
-let youWin = document.getElementById("you-win");
-let bootWin = document.getElementById("boot-win");
+//appel qui gagne
+let whoWin = document.getElementById("winner");
+//create element p
 let score = document.createElement("p");
 
-//button choice player
-let game = document.getElementById("player");
-game.addEventListener("click", function () {
-    console.log(game);
-})
-
-// choice boot
+// create random
 function choiceBoot () {
-    rock = 0;
-    sheet = 1;
-    chisel = 2;
-    let boot = Math.trunc(Math.random() * 2);
-    if (boot === 0) {
-        choiceBoot = rock;
-        console.log(rock);
-    }
-
-    else if (boot === 1) {
-        choiceBoot = sheet;
-        console.log(sheet);
-    }
-
-    else if (boot === 2) {
-        choiceBoot = chisel;
-        console.log(chisel);
-    }
+    return  Math.trunc(Math.random() * 3);
 }
-rock.addEventListener("click", choiceBoot);
-sheet.addEventListener("click" , choiceBoot);
-chisel.addEventListener("click", choiceBoot);
+
+for (let i = 0; i < containerSecond.length ; i++) {
+    containerSecond[i].addEventListener("click", function () {
+        console.log(i)
+        let boot = choiceBoot();
+        if (i === boot) {
+            whoWin.innerHTML = "Egalité !";
+        }
+        else {
+            winner(i, boot);
+        }
+    })
+}
 
 //winner
-    function winner (event, boot) {
-        if (event === 0 || boot === 2) {
-            youWin.innerHTML = "Tu as gagné!";
-           scorePlayer++;
-           score.appendChild(scorePlayer);
-        }
-        else {
-            bootWin.innerHTML = "L'ordinateur remporte!";
-            scoreBoot++;
-            score.appendChild(scoreBoot);
-        }
-        if (event === 2 || boot === 1) {
-            youWin.innerHTML = "Tu as gagné!";
-            scorePlayer++;
-            score.appendChild(scorePlayer);
-        }
-        else {
-            bootWin.innerHTML = "L'ordinateur remporte!";
-            scoreBoot++;
-            score.appendChild(scoreBoot);
-        }
-        if (event === 1 || boot === 0) {
-            youWin.innerHTML = "Tu as gagné";
-            scorePlayer++;
-            score.appendChild(scorePlayer);
-        }
-        else {
-            bootWin.innerHTML = "L'ordinateur remporte";
-            scoreBoot++;
-            score.appendChild(scoreBoot);
-        }
+function winner (player, boot) {
+    switch (player) {
+        case 0 :
+            if (boot === 1) {
+                whoWin.innerHTML = "L'ordinateur remporte!";
+            }
+            else  {
+                whoWin.innerHTML = "Tu as gagné!";
+            }
+            break;
+        case 1 :
+            if (boot === 0) {
+                whoWin.innerHTML = "Tu as gagné!";
+            }
+            else {
+                whoWin.innerHTML = "L'ordinateur remporte!";
+            }
+            break;
+        case 2 :
+            if (boot === 0) {
+                whoWin.innerHTML = "L'ordinateur remporte!";
+            }
+            else {
+                whoWin.innerHTML = "Tu as gagné!";
+            }
+            break;
     }
+}
