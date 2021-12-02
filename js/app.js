@@ -5,6 +5,7 @@ let scorePlayer = document.getElementById("score-player");
 let scoreBoot = document.getElementById("score-boot");
 let youWin = document.getElementById("you-win");
 let bootWin = document.getElementById("boot-win");
+let score = document.createElement("p");
 
 //button choice player
 let game = document.getElementById("player");
@@ -41,26 +42,32 @@ chisel.addEventListener("click", choiceBoot);
     function winner (event, boot) {
         if (event === 0 || boot === 2) {
             youWin.innerHTML = "Tu as gagné!";
-            scorePlayer++;
+           scorePlayer++;
+           score.appendChild(scorePlayer);
         }
         else {
             bootWin.innerHTML = "L'ordinateur remporte!";
             scoreBoot++;
+            score.appendChild(scoreBoot);
         }
         if (event === 2 || boot === 1) {
             youWin.innerHTML = "Tu as gagné!";
             scorePlayer++;
+            score.appendChild(scorePlayer);
         }
         else {
             bootWin.innerHTML = "L'ordinateur remporte!";
             scoreBoot++;
+            score.appendChild(scoreBoot);
         }
         if (event === 1 || boot === 0) {
             youWin.innerHTML = "Tu as gagné";
             scorePlayer++;
+            score.appendChild(scorePlayer);
         }
         else {
             bootWin.innerHTML = "L'ordinateur remporte";
             scoreBoot++;
+            score.appendChild(scoreBoot);
         }
     }
