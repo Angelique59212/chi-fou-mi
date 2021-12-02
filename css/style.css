@@ -22,8 +22,9 @@ html {
 
 #play , #boot {
     width: 20rem;
-    height: 20rem;
+    height: 22rem;
     border: 1px solid black;
     display: inline-block;
     margin: 2rem;
 }
+
